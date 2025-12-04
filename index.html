@@ -15,6 +15,8 @@
         </header>
 
         <main>
+            <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="ابحث عن اسم اللعبة..." style="width: 80%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 25px; outline: none; text-align: center;">
+            
             <section class="card">
                 <h2>عني</h2>
                 <p>اهلا بكَ في موقع مخصص للتطبيقات والعاب الموبايل @66 ZONE.</p>
@@ -32,6 +34,27 @@
             <p>تم التصميم بواسطة [ميراس]</p>
         </footer>
     </div>
+<script>
+    function searchGames() {
+        // نأخذ الكلمة التي كتبها الزائر
+        var input = document.getElementById("searchInput");
+        var filter = input.value.toUpperCase();
+        // نأخذ كل البطاقات الموجودة في الموقع
+        var cards = document.getElementsByClassName("card");
 
+        // نبحث داخل كل بطاقة
+        for (var i = 0; i < cards.length; i++) {
+            var text = cards[i].innerText || cards[i].textContent;
+            
+            // إذا وجدنا الكلمة نظهر البطاقة، وإلا نخفيها
+            if (text.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+</script>
+    
 </body>
 </html>
