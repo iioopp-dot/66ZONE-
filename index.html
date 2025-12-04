@@ -8,55 +8,60 @@
 </head>
 <body>
 
-        <div class="container">
+    <div class="container">
+        
         <header>
-            <img src="top.jpg" style="width: 100%; border-radius: 15px;">
-            <h1>مرحباً بك في موقعي!</h1>
-            <p>@66ZONE</p>
-        </header>
+            <img src="top.jpg" alt="صورة الواجهة" style="width: 100%; max-width: 600px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
             
+            <h1>مرحباً بك في موقعي!</h1>
+            <p>@66ZONE - أفضل موقع لتحميل الألعاب</p>
+        </header>
 
         <main>
-            <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="ابحث عن اسم اللعبة..." style="width: 80%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 25px; outline: none; text-align: center;">
-            
-            <section class="card">
-                <h2>عني</h2>
-                <p>اهلا بكَ في موقع مخصص للتطبيقات والعاب الموبايل @66 ZONE.</p>
-            </section>
+            <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="🔍 ابحث عن اسم اللعبة..." style="width: 80%; padding: 12px; margin-bottom: 25px; border: 1px solid #ddd; border-radius: 25px; outline: none; text-align: center; font-size: 16px;">
 
-            <section class="card">
-                <h2>مشاريعه</h2>
-                <ul>
-                    <li>موقع سهل وسلس لكي تحمل ماتريد</li>سوف تجد كل ماتحتاجة من تطبيقات والعاب هنا في هذا الموقع</li>
-                </ul>
-            </section>
+            <div class="card">
+                <img src="game1.jpg" alt="لعبة 1" style="width: 80px; height: 80px; border-radius: 15px; margin-bottom: 10px;">
+                <h3>لعبة ببجي (مثال)</h3>
+                <p>نسخة معدلة وسريعة</p>
+                <a href="رابط_التحميل_هنا" class="btn">تحميل</a>
+            </div>
+
+            <div class="card">
+                <h3>لعبة سباق سيارات</h3>
+                <p>جرافيك عالي وممتعة</p>
+                <a href="رابط_التحميل_هنا" class="btn">تحميل</a>
+            </div>
+
+            <div class="card">
+                <h3>تطبيق مونتاج</h3>
+                <p>تطبيق لتعديل الفيديو باحترافية</p>
+                <a href="رابط_التحميل_هنا" class="btn">تحميل</a>
+            </div>
+
         </main>
 
         <footer>
-            <p>تم التصميم بواسطة [ميراس]</p>
+            <p>تم التصميم بواسطة 66ZONE</p>
         </footer>
     </div>
-<script>
-    function searchGames() {
-        // نأخذ الكلمة التي كتبها الزائر
-        var input = document.getElementById("searchInput");
-        var filter = input.value.toUpperCase();
-        // نأخذ كل البطاقات الموجودة في الموقع
-        var cards = document.getElementsByClassName("card");
 
-        // نبحث داخل كل بطاقة
-        for (var i = 0; i < cards.length; i++) {
-            var text = cards[i].innerText || cards[i].textContent;
-            
-            // إذا وجدنا الكلمة نظهر البطاقة، وإلا نخفيها
-            if (text.toUpperCase().indexOf(filter) > -1) {
-                cards[i].style.display = "";
-            } else {
-                cards[i].style.display = "none";
+    <script>
+        function searchGames() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var cards = document.getElementsByClassName("card");
+
+            for (var i = 0; i < cards.length; i++) {
+                var text = cards[i].innerText || cards[i].textContent;
+                if (text.toUpperCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
             }
         }
-    }
-</script>
-    
+    </script>
+
 </body>
 </html>
