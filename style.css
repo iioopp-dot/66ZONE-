@@ -1,12 +1,160 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* تأكد أن هذا السطر موجود ومكتوب بشكل صحيح */
-    background-image: url('bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #333; /* لون النص */
+/* إعدادات عامة */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif; /* الخط العربي */
+    background-color: #121212; /* لون الخلفية أسود داكن */
+    color: #ffffff; /* لون النص أبيض */
     text-align: center;
+}
+
+/* الشريط العلوي */
+.navbar {
+    background-color: #1f1f1f;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.logo {
+    color: #0070d1; /* أزرق بلايستيشن */
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* الحاوية الرئيسية */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* صورة البانر */
+.banner-img {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+    border: 2px solid #333;
+}
+
+.header-text h1 {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #eee;
+}
+
+.header-text p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* مربع البحث */
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    background-color: #2d2d2d;
+    color: white;
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.search-box input:focus {
+    outline: 2px solid #0070d1;
+}
+
+/* شبكة الألعاب (Grid System) - أهم جزء */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* ترتيب تلقائي */
+    gap: 15px; /* المسافة بين البطاقات */
+    padding-bottom: 50px;
+}
+
+/* تصميم البطاقة */
+.game-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #0070d1;
+}
+
+.card-image img {
+    width: 100%;
+    height: 150px; /* ارتفاع ثابت للصورة */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.game-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.size {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* زر التحميل */
+.download-btn {
+    background-color: #0070d1; /* أزرق */
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+}
+
+.download-btn:hover {
+    background-color: #005bb5;
+}
+
+/* بطاقة المعلومات الخاصة */
+.info-card {
+    grid-column: 1 / -1; /* تأخذ العرض كامل */
+    padding: 20px;
+    text-align: right;
+    background: linear-gradient(45deg, #1e1e1e, #252525);
+}
+
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #333;
+    color: #555;
+    font-size: 12px;
 }
